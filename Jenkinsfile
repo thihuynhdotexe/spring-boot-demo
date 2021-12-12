@@ -37,7 +37,7 @@ pipeline {
       steps {
           withMaven(maven : 'mvn-3.6.3') {
             withCredentials([string(credentialsId: 'sonarqube-credentials', variable: 'SONAR_TOKEN')]) {
-              sh "mvn sonar:sonar -Dsonar.host.url=http://sonar:9000 -Dsonar.login $SONAR_TOKEN"
+              sh "mvn sonar:sonar -Dsonar.host.url=http://sonar:9000 -Dsonar.login=$SONAR_TOKEN"
             }
           }
       }
