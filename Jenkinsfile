@@ -8,17 +8,19 @@ pipeline {
 
 
   stages {
-    stage('Unit Tests') {
-      steps {
-        sh 'echo $JAVA_HOME'
-        withEnv(['JAVA_HOME=${ tool "jdk-11" }', 'PATH+MAVEN=${ tool "mvn-3.6.3" }/bin:${env.JAVA_HOME}/bin']) {
-           sh "mvn test"
-        }
-      }
-    }
+    // stage('Unit Tests') {
+    //   steps {
+
+    //     withEnv(['JAVA_HOME=${ tool "jdk-11" }', 'PATH+MAVEN=${ tool "mvn-3.6.3" }/bin:${env.JAVA_HOME}/bin']) {
+    //        sh "mvn test"
+    //     }
+    //   }
+    // }
 
     stage('Unit Tests 2') {
       steps {
+        sh 'echo $JAVA_HOME'
+        sh 'mvn --version'
         sh "mvn test"
       }
     }
