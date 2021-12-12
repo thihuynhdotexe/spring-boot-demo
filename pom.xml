@@ -121,7 +121,7 @@
                     </container>
                     <from>
                         <!-- adoptopenjdk/openjdk11:jdk-11.0.11_9-slim-->
-                        <image>adoptopenjdk/openjdk11:aarch64-ubuntu-jdk-11.0.11_9-slim</image>
+                        <image>adoptopenjdk/openjdk11:jdk-11.0.11_9-slim</image>
                     </from>
                 </configuration>
             </plugin>
