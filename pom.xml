@@ -104,15 +104,15 @@
                 <version>2.5.2</version>
                 <configuration>
                     <to>
-                        <image>docker.io/maartensmeets/${project.artifactId}</image>
+                        <image>docker.io/thihuynh/${project.artifactId}</image>
                         <tags>
                             <tag>${project.version}</tag>
                             <tag>latest</tag>
                         </tags>
-                        <auth>
+                        <!-- <auth>
                             <username>${env.DOCKER_USERNAME}</username>
                             <password>${env.DOCKER_PASSWORD}</password>
-                        </auth>
+                        </auth> -->
                     </to>
                     <container>
                         <ports>
