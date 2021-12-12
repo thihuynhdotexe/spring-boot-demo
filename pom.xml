@@ -120,7 +120,8 @@
                         </ports>
                     </container>
                     <from>
-                        <image>adoptopenjdk/openjdk11:jdk-11.0.11_9-slim</image>
+                        <!-- adoptopenjdk/openjdk11:jdk-11.0.11_9-slim-->
+                        <image>sha256:f161a2abd82ce88a06b25b0640867e98e82eeb181c094cbef05afd8d5dac5c76</image>
                     </from>
                 </configuration>
             </plugin>
