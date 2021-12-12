@@ -8,18 +8,8 @@ pipeline {
 
 
   stages {
-    // stage('Unit Tests') {
-    //   steps {
-
-    //     withEnv(['JAVA_HOME=${ tool "jdk-11" }', 'PATH+MAVEN=${ tool "mvn-3.6.3" }/bin:${env.JAVA_HOME}/bin']) {
-    //        sh "mvn test"
-    //     }
-    //   }
-    // }
-
-    stage('Unit Tests 2') {
+    stage('Unit Tests') {
       steps {
-        sh 'echo $JAVA_HOME'
         sh 'mvn --version'
         sh "mvn test"
       }
@@ -28,7 +18,7 @@ pipeline {
     stage('Build') {
       steps {
         withMaven(maven : 'mvn-3.6.3') {
-          sh "mvn package"
+          sh "mvn clean package -Dmaven.test.skip=true"
         }
       }
     }
