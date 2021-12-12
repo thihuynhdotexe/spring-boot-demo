@@ -20,13 +20,12 @@ services:
       - 8080:8080
       - 50000:50000
   sonar:
-    build: sonarqube/
+    image: sonarqube:lts-community
     container_name: sonar
     ports:
       - 9000:9000
       - 9092:9092
-    environment:  
-      - JAVA_OPTS=-Dsonar.forceAuthentication=false 
+
   api:
     image: anchore/anchore-engine:v1.0.0
     depends_on:
