@@ -5,7 +5,14 @@ pipeline {
     jdk 'jdk-11'
     maven 'mvn-3.6.3'
   }
-
+  stages('Unit Tests') {
+    withEnv(['JAVA_HOME=${ tool "jdk-11" }', 'PATH+MAVEN=${ tool "mvn-3.6.3" }/bin:${env.JAVA_HOME}/bin']) {
+        sh "mvn test"
+    }
+  }
+  stages('Unit Tests 2') {
+    sh "mvn test"
+  }
   stages {
     stage('Build') {
       steps {

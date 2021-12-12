@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  jenkins:
+    image: jenkins/jenkins:lts-jdk11
+    privileged: true
+    user: root
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - jenkins_data:/var/jenkins_home
+      - /usr/local/bin/docker:/usr/local/bin/docker
+    ports:
+      - 8080:8080
+      - 50000:50000
+  sonar:
+    build: custom-dockerfiles/sonarqube
+    container_name: sonarqube
+    ports:
+      - 9000:9000
+      - 9092:9092
+    environment:  
+      - JAVA_OPTS=-Dsonar.forceAuthentication=false  
