@@ -120,7 +120,7 @@
                         </ports>
                     </container>
                     <from>
-                        <image>adoptopenjdk/openjdk11</image>
+                        <image>adoptopenjdk/openjdk11:jdk-11.0.11_9-slim</image>
                     </from>
                 </configuration>
             </plugin>
