@@ -54,7 +54,7 @@ pipeline {
     stage('Anchore analyse') {
       steps {
         writeFile file: 'anchore_images', text: 'docker.io/thihuynh/spring-boot-demo'
-        anchore name: 'anchore_images'
+        anchore bailOnFail: false, bailOnPluginFail: false,name: 'anchore_images'
       }
     }
 
